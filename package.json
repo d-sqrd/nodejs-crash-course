@@ -1,0 +1,13 @@
+{
+  "name": "node.js-notes",
+  "version": "1.0.0",
+  "description": "Code snippets for quickly understanding Node.js concepts",
+  "main": "index.js",
+  "type":"module",  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

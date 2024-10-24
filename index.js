@@ -16,10 +16,18 @@ console.log("2" + this);
 // counterpart of window object in node.js: global object
 console.log(global);
 
-// commonJS syntax to import a module
-const generateRandomNumber = require("./utils");
-console.log(generateRandomNumber());
+/**************************************************************Import-Export*********************************************************************************************/
 
-const { generateRandomNumber2, printHelloWorld } = require("./utils2"); // the names should match with what was exported from the module
-console.log(generateRandomNumber2());
-console.log(printHelloWorld("John"));
+/*******************************CommonJS import-export syntax*******************************/
+// commonJS syntax to import a module -> uses modeul.exports = {} and require for exporting and importing respectively
+// const generateRandomNumber = require("./utils"); // cannot use "require" when type = module inside package.json
+// console.log(generateRandomNumber());
+
+// const { generateRandomNumber2, printHelloWorld } = require("./utils2"); // the names should match with what was exported from the module   // cannot use "require" when type = module inside package.json
+// console.log(generateRandomNumber2());
+// console.log(printHelloWorld("John"));
+
+/*******************************ES import-export syntax*******************************/
+import getPostsLength_random, { getPosts } from "./postController.js"; // getPostsLength method inside postController.js was exported as default so no need of curly braces and exact name matching while importing
+console.log(`get posts = ${JSON.stringify(getPosts())}`);
+console.log(`get posts length = ${getPostsLength_random()}`);
